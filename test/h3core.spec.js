@@ -117,6 +117,10 @@ test('isValidCell', assert => {
         'String with additional unparsed chars is not valid'
     );
     assert.ok(
+        !h3.isValidCell('1085283473fffffff'),
+        'String with more than 64 bits of leading chars is not valid'
+    );
+    assert.ok(
         !h3.isValidCell('8a283081f1f1f1f1f1f5505ffff'),
         'String with extraneous parsable characters in the middle is not valid'
     );
